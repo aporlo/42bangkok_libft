@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsomrat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 22:03:42 by lsomrat           #+#    #+#             */
-/*   Updated: 2022/02/20 22:47:27 by lsomrat          ###   ########.fr       */
+/*   Created: 2022/02/23 22:38:20 by lsomrat           #+#    #+#             */
+/*   Updated: 2022/02/23 23:51:51 by lsomrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_isalpha(int c);
-
-int main(void)
+char	*ft_strchr(const char *s, int c)
 {
-	char c;
-	
-	c = 'Q';
-	printf("%d\n", ft_isalpha(c));
-	c = '2';
-	printf("%d\n", ft_isalpha(c));
-	return (0);
+	while (*s != '\0')
+	{
+		if ((unsigned char)*s == (unsigned char)c)
+			return ((char *)s);
+		s++;
+	}
+	if (c == 0)
+		return ((char *)s);
+	return (NULL);
 }

@@ -6,14 +6,21 @@
 #    By: lsomrat <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 22:36:19 by lsomrat           #+#    #+#              #
-#    Updated: 2022/02/22 23:24:33 by lsomrat          ###   ########.fr        #
+#    Updated: 2022/02/24 00:57:47 by lsomrat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
 SRCS	= ft_isalpha.c \
 	  ft_isdigit.c \
-	  ft_isalnum.c
+	  ft_isalnum.c \
+	  ft_toupper.c \
+	  ft_tolower.c \
+	  ft_isascii.c \
+	  ft_isprint.c \
+	  ft_strlen.c \
+	  ft_strchr.c \
+	  ft_strncmp.c
 OBJS	= ${SRCS:.c=.o}
 
 COM	= gcc -Wall -Wextra -Werror

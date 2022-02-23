@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsomrat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 16:34:42 by lsomrat           #+#    #+#             */
-/*   Updated: 2022/02/24 00:57:23 by lsomrat          ###   ########.fr       */
+/*   Created: 2022/02/24 00:40:17 by lsomrat           #+#    #+#             */
+/*   Updated: 2022/02/24 00:55:18 by lsomrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "stdio.h"
-# include "unistd.h"
-
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-char	*ft_strchr(const char *s, int c);
-int		ft_strncmp(const char *str1, const char *str2, size_t n);
-#endif
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
+{
+	while (*str1 != '\0' && *str2 != '\0' && n != 0)
+		if (str1[n] < str2[n]) || (str1[n] > str2[n])
+			return (str1 - str2);
+		return (0);
+	n--;
+}
