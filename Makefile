@@ -6,7 +6,7 @@
 #    By: lsomrat <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 22:36:19 by lsomrat           #+#    #+#              #
-#    Updated: 2022/02/25 01:13:35 by lsomrat          ###   ########.fr        #
+#    Updated: 2022/02/26 22:47:58 by lsomrat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ SRCS	= ft_isalpha.c \
 	  ft_strchr.c \
 	  ft_strncmp.c \
 	  ft_memchr.c \
-	  ft_memcmp.c
+	  ft_memcmp.c \
+	  ft_memset.c \
+	  ft_bzero.c \
+	  ft_memmove.c
 OBJS	= ${SRCS:.c=.o}
 
 COM	= gcc -Wall -Wextra -Werror
