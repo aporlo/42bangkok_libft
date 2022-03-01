@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsomrat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 22:38:20 by lsomrat           #+#    #+#             */
-/*   Updated: 2022/02/28 19:10:43 by lsomrat          ###   ########.fr       */
+/*   Created: 2022/03/01 19:10:56 by lsomrat           #+#    #+#             */
+/*   Updated: 2022/03/01 19:41:04 by lsomrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_atoi(const char *s)
 {
-	while (*s != '\0')
+	unsigned int	n;
+	int				i;
+	int				sign;
+
+	i = 0;
+	n = 0;
+	sign = 1;
+	while ((s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		|| s[i] == '\f' || s[i] == '\v' || s[i] == '\r')
+		i++;
+	if (s[i] == '-')
+		sign = -1;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	while (s[i] >= '0' && s[i] <= '9')
 	{
-		if ((unsigned char)*s == (unsigned char)c)
-			return ((char *)s);
-		s++;
+		n = n * 10 + (s[i] - '0');
+		i++;
 	}
-	if (c == 0)
-		return ((char *)s);
-	return (NULL);
+	return ((int)(sign * n));
 }
