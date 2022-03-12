@@ -6,10 +6,11 @@
 #    By: lsomrat <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 22:36:19 by lsomrat           #+#    #+#              #
-#    Updated: 2022/03/01 22:49:25 by lsomrat          ###   ########.fr        #
+#    Updated: 2022/03/13 01:24:23 by lsomrat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+FLAGS	= -Wall -Wextra -Werror
 NAME	= libft.a
 SRCS	= ft_isalpha.c \
 	  ft_isdigit.c \
@@ -33,28 +34,51 @@ SRCS	= ft_isalpha.c \
 	  ft_strrchr.c \
 	  ft_atoi.c \
 	  ft_calloc.c \
-	  ft_strdup.c
+	  ft_strdup.c \
+	  ft_substr.c \
+	  ft_putstr_fd.c \
+	  ft_putchar_fd.c \
+	  ft_putnbr_fd.c \
+	  ft_putendl_fd.c \
+	  ft_itoa.c \
+	  ft_split.c \
+	  ft_strjoin.c \
+	  ft_strtrim.c \
+	  ft_striteri.c \
+	  ft_strmapi.c
+
+SRCS_B	= ft_lstnew.c \
+	  ft_lstadd_front.c \
+	  ft_lstlast.c \
+	  ft_lstsize.c \
+	  ft_lstadd_back.c \
+	  ft_lstdelone.c \
+	  ft_lstclear.c \
+	  ft_lstiter.c 
+
 OBJS	= ${SRCS:.c=.o}
 
-COM	= gcc -Wall -Wextra -Werror
+OBJS_B    = ${SRCS_B:.c=.o}
 
-RM	= rm -f
-.c.o:
-	${COM} -c $< -o ${<:.c=.o}
+%.o: %.c
+	gcc ${FLAGS} -c $< -o $@
 	
 $(NAME): ${OBJS}
-	ar rc ${NAME} ${OBJS}
+	ar rcs ${NAME} ${OBJS}
+
+bonus: ${OBJS_B}
+	ar rcs ${NAME} ${OBJS_B}
 
 norminette:
-	norminette ${SRCS}
+	norminette ${SRCS} ${SRCS_B}
 
 all: ${NAME}
 
 clean:
-	${RM} ${NAME} ${OBJS}
+	rm -f ${OBJS} ${OBJS_B}
 
 fclean: clean
-	${RM} ${NAME} ${OBJS}
+	rm -f ${NAME}
 
 re: fclean all
 
