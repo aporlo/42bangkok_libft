@@ -6,7 +6,7 @@
 #    By: lsomrat <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 22:36:19 by lsomrat           #+#    #+#              #
-#    Updated: 2022/03/13 01:24:23 by lsomrat          ###   ########.fr        #
+#    Updated: 2022/03/13 11:50:30 by lsomrat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,8 @@ SRCS_B	= ft_lstnew.c \
 	  ft_lstadd_back.c \
 	  ft_lstdelone.c \
 	  ft_lstclear.c \
-	  ft_lstiter.c 
+	  ft_lstiter.c \
+	  ft_lstmap.c 
 
 OBJS	= ${SRCS:.c=.o}
 
